@@ -34,3 +34,13 @@ const String appResetViaPhoneSubTitle = "Enter your registered Phone N° to rece
 const String appOtpTitle = "CO\nDE";
 const String appOtpSubTitle = "Verification";
 const String appOtpMessage = "Enter your verification code sent at ";
+
+
+const String appDashboardTitle = "Hey, Marcos";
+const String appDashboardHeading = "Explore Courses";
+const String appDashboardSearch = "Search...";
+const String appDashboardBannerTitle1 = "ANDROID";
+const String appDashboardBannerTitle2 = "JAVA";
+const String appDashboardBannerSubTitle = "10 Lessons";
+const String appDashboardButton = "View All";
+const String appDashboardTopCourses = "Top Courses";
