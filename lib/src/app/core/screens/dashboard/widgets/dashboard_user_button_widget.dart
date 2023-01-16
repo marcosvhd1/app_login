@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_app/src/constants/colors.dart';
 import 'package:flutter_login_app/src/constants/image_strings.dart';
+import 'package:flutter_login_app/src/repository/auth/auth_repository.dart';
 
 class DashboardUserButtonWidget extends StatelessWidget {
   const DashboardUserButtonWidget({super.key});
@@ -15,7 +16,7 @@ class DashboardUserButtonWidget extends StatelessWidget {
       ),
       child: IconButton(
         icon: const Image(image: AssetImage(appDashboardUserImage)),
-        onPressed: () {},
+        onPressed: () => AuthRepository.instance.logout(),
       ),
     );
   }

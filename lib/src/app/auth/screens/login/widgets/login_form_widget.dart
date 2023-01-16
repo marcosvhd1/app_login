@@ -49,7 +49,7 @@ class LoginFormWidget extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 child: Text(appLoginText.toUpperCase()),
-                onPressed: () => Get.to(() => const DashboardScreen()),
+                onPressed: () {Get.offAll(() => const DashboardScreen());},
               ),
             ),
           ],

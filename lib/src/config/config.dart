@@ -1,12 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_login_app/src/app/auth/controllers/on_boarding_controller.dart';
-import 'package:flutter_login_app/src/common/fade_animation/fade_animation_controller.dart';
+import 'package:flutter_login_app/src/config/firebase_options.dart';
+import 'package:flutter_login_app/src/repository/auth/auth_repository.dart';
 import 'package:get/get.dart';
 
-class AppConfig { 
+class AppConfig {
   static initConfigs() {
     WidgetsFlutterBinding.ensureInitialized();
-    Get.lazyPut(() => AppFadeAnimationController());
-    Get.lazyPut(() => OnBoardingController());
+    Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ).then((value) {
+      Get.put(AuthRepository());
+    });
+    //Get.put(OnBoardingController());
   }
 }

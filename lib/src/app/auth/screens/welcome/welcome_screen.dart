@@ -14,7 +14,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<AppFadeAnimationController>();
+    final controller = Get.put(AppFadeAnimationController());
     controller.startAnimation();
 
     var size = MediaQuery.of(context).size;

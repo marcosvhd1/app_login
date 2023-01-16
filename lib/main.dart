@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_app/src/app/auth/screens/splash/splash_screen.dart';
 import 'package:flutter_login_app/src/config/config.dart';
 import 'package:flutter_login_app/src/utils/theme/theme.dart';
 import 'package:get/get.dart';
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const SplashScreen(),
+      home: const CircularProgressIndicator(),
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 500),

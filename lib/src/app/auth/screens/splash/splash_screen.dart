@@ -6,13 +6,15 @@ import 'package:flutter_login_app/src/constants/colors.dart';
 import 'package:flutter_login_app/src/constants/image_strings.dart';
 import 'package:flutter_login_app/src/constants/sizes.dart';
 import 'package:flutter_login_app/src/constants/text_strings.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    AppFadeAnimationController.find.startSplashAnimation();
+    final controller = Get.put(AppFadeAnimationController());
+    controller.startSplashAnimation();
     return Scaffold(
       body: SafeArea(
         child: Stack(
