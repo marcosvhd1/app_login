@@ -44,3 +44,19 @@ const String appDashboardBannerTitle2 = "JAVA";
 const String appDashboardBannerSubTitle = "10 Lessons";
 const String appDashboardButton = "View All";
 const String appDashboardTopCourses = "Top Courses";
+
+const String appProfile = "Profile";
+const String appEditProfile = "Edit Profile";
+const String appLogoutDialogHeading = "Logout";
+const String appProfileHeading = "Marcos";
+const String appProfileSubHeading = "marcosvhd1@gmail.com";
+
+const String appMenu1 = 'Settings';
+const String appMenu2 = 'Billing Details';
+const String appMenu3 = 'User Management';
+const String appMenu4 = 'Information';
+const String appMenu5 = 'Logout';
+
+const String appDelete = "Delete";
+const String appJoined = "Joined  ";
+const String appJoinedAt = "31 October 2022";

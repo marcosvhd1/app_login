@@ -15,3 +15,5 @@ const String appDashboardBookMark = "assets/images/book-mark.png";
 const String appDashboardBannerImage1 = "assets/images/dashboard-banner1.png";
 const String appDashboardBannerImage2 = "assets/images/dashboard-banner2.png";
 const String appDashboardTopCoursesImage = "assets/images/top-courses.png";
+
+const String appProfileImage = "assets/images/splash.png";

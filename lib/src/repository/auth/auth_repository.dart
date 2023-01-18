@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_login_app/src/app/auth/screens/welcome/welcome_screen.dart';
 import 'package:flutter_login_app/src/app/core/screens/dashboard/dashboard.dart';
 import 'package:get/get.dart';
@@ -28,7 +29,7 @@ class AuthRepository extends GetxController {
         : Get.offAll(() => const DashboardScreen());
   }
 
-  Future<void> phoneAuth(String phoneNo) async {
+  Future<void> verifcationPhoneCode(String phoneNo) async {
     try {
       await _auth.verifyPhoneNumber(
         phoneNumber: phoneNo,
@@ -39,8 +40,22 @@ class AuthRepository extends GetxController {
         codeAutoRetrievalTimeout: (verificationId) =>
             this.verificationId.value = verificationId,
         verificationFailed: (error) => (error.code == 'invalid-phone-number')
-            ? Get.snackbar('Error', 'The provided phone number is not valid.')
-            : Get.snackbar('Error', 'Something went wrong. Try again.'),
+            ? Get.snackbar(
+                "Erro",
+                "The provided phone number is not valid.",
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Colors.red.withOpacity(0.1),
+                colorText: Colors.red,
+                margin: const EdgeInsets.all(10),
+              )
+            : Get.snackbar(
+                "Erro",
+                "Algo deu errado.",
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Colors.red.withOpacity(0.1),
+                colorText: Colors.red,
+                margin: const EdgeInsets.all(10),
+              ),
       );
     } on FirebaseAuthException catch (error) {
       final ex = SignUpWithEPFailure.code(error.code);
@@ -54,25 +69,40 @@ class AuthRepository extends GetxController {
   }
 
   Future<bool> verifyOTP(String otp) async {
-    var credentials = await _auth.signInWithCredential(PhoneAuthProvider.credential(
+    var credentials =
+        await _auth.signInWithCredential(PhoneAuthProvider.credential(
       verificationId: verificationId.value,
       smsCode: otp,
     ));
 
-    return credentials.user != null ? true: false;
+    return credentials.user != null ? true : false;
   }
 
   Future<void> createUserWithEP(String email, String password) async {
     try {
-      await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      Get.snackbar('Sucess', 'User registred');
+      await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
     } on FirebaseAuthException catch (error) {
       final ex = SignUpWithEPFailure.code(error.code);
-      Get.snackbar('Error', ex.message);
-      throw ex;
+      Get.snackbar(
+        "Erro",
+        ex.message,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red.withOpacity(0.1),
+        colorText: Colors.red,
+        margin: const EdgeInsets.all(10),
+      );
+      throw ex.message;
     } catch (_) {
       const ex = SignUpWithEPFailure();
-      Get.snackbar('Error', ex.message);
+      Get.snackbar(
+        "Erro",
+        ex.message,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red.withOpacity(0.1),
+        colorText: Colors.red,
+        margin: const EdgeInsets.all(10),
+      );
       throw ex;
     }
   }

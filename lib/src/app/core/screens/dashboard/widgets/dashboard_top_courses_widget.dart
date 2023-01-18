@@ -11,6 +11,7 @@ class DashboardTopCoursesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final list = DashboardCoursesModel.list;
+    var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,7 +29,7 @@ class DashboardTopCoursesWidget extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: appCardBgColor,
+                    color: isDark ? appSecondaryColor : appCardBgColor,
                   ),
                   padding: const EdgeInsets.all(10),
                   child: Column(

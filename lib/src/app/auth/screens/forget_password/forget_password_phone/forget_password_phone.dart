@@ -6,8 +6,8 @@ import 'package:flutter_login_app/src/constants/sizes.dart';
 import 'package:flutter_login_app/src/constants/text_strings.dart';
 import 'package:get/get.dart';
 
-class ForgetPasswordEmailScreen extends StatelessWidget {
-  const ForgetPasswordEmailScreen({super.key});
+class ForgetPasswordPhoneScreen extends StatelessWidget {
+  const ForgetPasswordPhoneScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ForgetPasswordEmailScreen extends StatelessWidget {
                 const AuthHeaderWidget(
                   image: appForgetPasswordImage,
                   title: 'Forget Password',
-                  subtitle: appResetViaEmailSubTitle,
+                  subtitle: appResetViaPhoneSubTitle,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   imageBetween: 30,
                 ),
@@ -31,11 +31,11 @@ class ForgetPasswordEmailScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       TextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.phone,
                         decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.email_rounded),
-                          labelText: 'E-mail',
-                          hintText: 'E-mail',
+                          prefixIcon: Icon(Icons.numbers_rounded),
+                          labelText: 'Phone N°',
+                          hintText: 'Phone N°',
                         ),
                       ),
                       const SizedBox(height: appFormHeight - 10),

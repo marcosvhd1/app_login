@@ -12,6 +12,5 @@ class AppConfig {
     ).then((value) {
       Get.put(AuthRepository());
     });
-    //Get.put(OnBoardingController());
   }
 }

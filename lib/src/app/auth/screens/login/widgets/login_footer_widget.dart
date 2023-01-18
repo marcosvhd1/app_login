@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_app/src/app/auth/screens/signup/signup_screen.dart';
 import 'package:flutter_login_app/src/common/google_button/google_button.dart';
 import 'package:flutter_login_app/src/constants/sizes.dart';
 import 'package:flutter_login_app/src/constants/text_strings.dart';
+import 'package:get/get.dart';
 
 class LoginFooterWidget extends StatelessWidget {
   const LoginFooterWidget({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class LoginFooterWidget extends StatelessWidget {
         const GoogleButton(),
         const SizedBox(height: appFormHeight - 20),
         TextButton(
-          onPressed: () {},
+          onPressed: () => Get.off(() => const SignUpScreen()),
           child: Text.rich(
             TextSpan(
               text: appDontHaveAccount,

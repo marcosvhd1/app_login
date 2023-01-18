@@ -14,13 +14,12 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
         title: Text(appName, style: Theme.of(context).textTheme.headline4),
-        leading: const Icon(Icons.filter_list_rounded, color: appDarkColor),
+        leading: Icon(Icons.filter_list_rounded,
+            color: isDark ? appWhiteColor : appDarkColor),
         actions: const [DashboardUserButtonWidget()],
       ),
       body: SingleChildScrollView(

@@ -9,6 +9,7 @@ class DashboardBannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     final textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
@@ -23,7 +24,7 @@ class DashboardBannerWidget extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: appCardBgColor,
+                  color: isDark ? appSecondaryColor : appCardBgColor,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,12 +48,12 @@ class DashboardBannerWidget extends StatelessWidget {
                     const SizedBox(height: 25),
                     Text(
                       appDashboardBannerTitle1,
-                      style: textTheme.headline4?.apply(color: appDarkColor),
+                      style: textTheme.headline4,
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       appDashboardBannerSubTitle,
-                      style: textTheme.bodyText2?.apply(color: appDarkColor),
+                      style: textTheme.bodyText2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
@@ -68,7 +69,7 @@ class DashboardBannerWidget extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: appCardBgColor,
+                  color: isDark ? appSecondaryColor : appCardBgColor,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,12 +93,12 @@ class DashboardBannerWidget extends StatelessWidget {
                     const SizedBox(height: 25),
                     Text(
                       appDashboardBannerTitle2,
-                      style: textTheme.headline4?.apply(color: appDarkColor),
+                      style: textTheme.headline4,
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       appDashboardBannerSubTitle,
-                      style: textTheme.bodyText2?.apply(color: appDarkColor),
+                      style: textTheme.bodyText2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
