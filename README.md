@@ -35,7 +35,7 @@ flutter pub get
 
 - Use o Firebase CLI para adicionar o Firebase em seu app, <a href="https://firebase.google.com/docs/flutter/setup?platform=android">Documentação</a>
 
-- Na página de Autenticação no Firebase, adicione o método Email/Senha e Telefone
+- Na página de Autenticação no Firebase, adicione os métodos Email/Senha e Telefone
 
 - Após isso, você irá baixar o arquivo firebase_options, que está disponível na configuração do seu projeto no Firebase, e colocar no app no caminho
 ``` lib -> src -> config -> firebase_options.dart```
