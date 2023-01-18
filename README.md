@@ -5,7 +5,7 @@ O app representa uma autenticação completa com o Firebase, explorando as mais 
 Para esse projeto utilizei o microframework GetX para controle de estado, gerenciamento de rotas e UI feedback.
 
 ## Features
-- [x] Registrar usuáio no Firebase via email e telefone;
+- [x] Registrar usuário no Firebase via email e telefone;
 - [x] Login com senha e telefone;
 - [x] Logout;
 - [x] Consultar, salvar e editar dados de usuários no Cloud FireStore;
