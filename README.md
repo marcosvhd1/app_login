@@ -20,7 +20,7 @@ Para esse projeto utilizei o microframework GetX para controle de estado, gerenc
 - Clone o projeto
 
 ```sh
-git clone https://github.com/marcosvhd1/schedules.git
+git clone https://github.com/marcosvhd1/app_login.git
 ```
 
 - Abra seu projeto, e rode o seguinte comando
